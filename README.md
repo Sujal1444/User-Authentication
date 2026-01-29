@@ -22,7 +22,9 @@ npm run dev
 
 Create a .env file:
 PORT=5000
+
 MONGO_URI=mongodb://127.0.0.1:27017/user_auth
+
 JWT_SECRET=your_secret_key
 
 🔐 API Overview
