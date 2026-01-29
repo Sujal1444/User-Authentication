@@ -1,77 +1,132 @@
-🔐 Node.js Auth & Admin API
+User Authentication System (Node.js & MongoDB)
+📌 Project Overview
 
-A simple and practical Node.js + Express + MongoDB backend that handles user authentication, JWT-based authorization, admin user management, and password reset.
+This project is a User Authentication System built using Node.js, Express.js, and MongoDB.
+It provides secure authentication features such as user registration, login, password hashing, and JWT-based authorization.
 
-Built as a learning project, but structured like a real-world backend.
-
-✨ Features
-
-User register & login
-
-JWT authentication
-
-Get logged-in user (/me)
-
-Role-based access (user / admin)
-
-Admin CRUD for users
-
-Forgot & reset password
+The system follows RESTful architecture and can be easily integrated with frontend applications like React, Flutter, or any mobile/web app.
 
 🛠 Tech Stack
 
-Node.js
+Backend: Node.js, Express.js
 
-Express
+Database: MongoDB (Atlas / Local)
 
-MongoDB (Mongoose)
+Authentication: JWT (JSON Web Token)
 
-JWT
+Password Security: bcrypt
 
-bcrypt
+Environment Variables: dotenv
 
-▶️ Run Locally
+API Testing: Postman
+
+✨ Features
+
+User Registration
+
+User Login
+
+Password Encryption using bcrypt
+
+JWT Token Generation
+
+Protected Routes using Middleware
+
+Input Validation
+
+Centralized Error Handling
+
+RESTful Architecture
+
+📂 Project Structure
+user-auth-system/
+│
+├── config/
+│   └── db.js
+│
+├── controllers/
+│   └── authController.js
+│
+├── middleware/
+│   └── authMiddleware.js
+│
+├── models/
+│   └── User.js
+│
+├── routes/
+│   └── authRoutes.js
+│
+├── .env
+├── server.js
+├── package.json
+└── README.md
+
+⚙️ Installation & Setup
+1️⃣ Clone the Repository
+git clone https://github.com/your-username/user-auth-system.git
+cd user-auth-system
+
+2️⃣ Install Dependencies
 npm install
+
+3️⃣ Configure Environment Variables
+
+Create a .env file in the root directory:
+
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret_key
+
+4️⃣ Run the Server
+npm start
+
+
+or (for development)
+
 npm run dev
 
 
-Create a .env file:
+Server will start at:
 
-PORT=5000
-MONGO_URI=mongodb://127.0.0.1:27017/user_auth
-JWT_SECRET=your_secret_key
+http://localhost:5000
 
-🔐 API Overview
-Auth
+🔐 Authentication Flow
 
-POST /api/auth/register
+User submits credentials
 
-POST /api/auth/login
+Password is securely hashed and stored
 
-GET /api/auth/me
+JWT token is generated on successful authentication
 
-POST /api/auth/forgot-password
+Token is used to access protected resources
 
-POST /api/auth/reset-password/:token
+Middleware validates token for every protected request
 
-Admin (JWT + admin role required)
+🧪 Testing
 
-POST /api/admin/users
+Use Postman or Thunder Client
 
-GET /api/admin/users
+Verify authentication flow
 
-PUT /api/admin/users/:id/role
+Test token validation and error responses
 
-DELETE /api/admin/users/:id
+🚀 Future Enhancements
 
-Auth Header
+Refresh Tokens
 
-Authorization: Bearer <JWT_TOKEN>
+Email Verification
 
-💡 Why this project?
+Forgot / Reset Password
 
-To understand how authentication works behind the scenes — not just login, but roles, security, and real admin features.
+Role-based Access Control
 
-👤 Author
+OAuth Integration (Google, GitHub)
+
+👨‍💻 Author
 
 Sujal Patel
+Backend Developer (Node.js | MongoDB | Laravel)
+
+📜 License
+
+This project is licensed under the MIT License.
